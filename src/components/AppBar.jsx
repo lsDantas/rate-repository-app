@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Pressable } from 'react-native';
+import { View, StyleSheet, Pressable, ScrollView } from 'react-native';
 import { Link } from 'react-router-native';
 import Constants from 'expo-constants';
 
@@ -23,21 +23,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
   },
+  appScroll: {
+    flexDirection: 'row',
+  }
 });
 
 const AppBar = () => {
   return (
-    <View style={styles.container}>{}
-      <Pressable onPress={() => {}}>
-        <Link to="/">
-          <AppBarTab text='Repositories' />
-        </Link>
-      </Pressable>
-      <Pressable onPress={() => { }}>
-        <Link to="/sign-in">
-          <AppBarTab text='Sign in' />
-        </Link>
-      </Pressable>
+    <View style={styles.container}>
+      <ScrollView horizontal>
+        <View style={styles.appScroll}>
+          <Pressable onPress={() => { }}>
+            <Link to="/">
+              <AppBarTab text='Repositories' />
+            </Link>
+          </Pressable>
+          <Pressable onPress={() => { }}>
+            <Link to="/sign-in">
+              <AppBarTab text='Sign in' />
+            </Link>
+          </Pressable>
+        </View>
+      </ScrollView>
     </View>
   );
 };
