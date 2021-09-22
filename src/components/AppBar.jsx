@@ -4,18 +4,22 @@ import Constants from 'expo-constants';
 
 import AppBarTab from './AppBarTab';
 
+import theme from '../theme';
+
 // Padding Constants
-const lateralPadding = 15;
+const horizontalPadding = 15;
+const topPadding = 10;
 const bottomPadding = 20;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
-    paddingLeft: lateralPadding,
-    paddingRight: lateralPadding,
+    paddingTop: Constants.statusBarHeight + topPadding,
+    paddingLeft: horizontalPadding,
+    paddingRight: horizontalPadding,
     paddingBottom: bottomPadding,
-    backgroundColor: "#24292e",
-    justifyContent: "center",
+    backgroundColor: theme.colors.secondary,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
