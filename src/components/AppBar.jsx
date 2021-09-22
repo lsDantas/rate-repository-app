@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { Link } from 'react-router-native';
 import Constants from 'expo-constants';
 
 import AppBarTab from './AppBarTab';
@@ -20,13 +21,23 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.secondary,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-around',
   },
 });
 
 const AppBar = () => {
   return (
     <View style={styles.container}>{}
-      <AppBarTab text='Repositories' />
+      <Pressable onPress={() => {}}>
+        <Link to="/">
+          <AppBarTab text='Repositories' />
+        </Link>
+      </Pressable>
+      <Pressable onPress={() => { }}>
+        <Link to="/sign-in">
+          <AppBarTab text='Sign in' />
+        </Link>
+      </Pressable>
     </View>
   );
 };
