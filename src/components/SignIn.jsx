@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Pressable, Text, StyleSheet } from 'react-native';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -22,16 +22,23 @@ const styles = StyleSheet.create({
     padding: 10
   },
   formField: {
+    fontFamily: theme.fontFamily,
     fontSize: theme.fontSizes.subheading,
     borderWidth: 0.2,
     padding: 5,
-    marginTop: fieldMarginSize,
-    marginLeft: fieldMarginSize,
-    marginRight: fieldMarginSize,
+    margin: fieldMarginSize,
     borderRadius: 2,
   },
+  formButtonContainer: {
+    alignItems: 'center',
+  },
   formButton: {
+    color: theme.colors.textContrast,
+    backgroundColor: theme.colors.primary,
+    fontSize: theme.fontSizes.subheading,
+    fontFamily: theme.fontFamily,
     padding: 5,
+    margin: fieldMarginSize,
     borderRadius: 2,
   },
 });
@@ -39,20 +46,25 @@ const styles = StyleSheet.create({
 const validationSchema = yup.object().shape({
   username: yup
     .string()
-    .required()
+    .min(1)
     .required("Username is required."),
   password: yup
     .string()
+    .min(1)
     .required("Password is required.")
 });
 
-const SignInForm = ({ onSubmit }) => {
+const SignInForm = ({ errors, onSubmit }) => {
   return (
     <View style={styles.formContainer}>
       <FormikTextInput name="username" placeholder="Username" style={styles.formField} />
       <FormikTextInput name="password" placeholder="Password" style={styles.formField} secureTextEntry={true} />
       <View style={styles.formButton}>
-        <Button title="Sign in" onPress={onSubmit} style={styles.formButton} ></Button>
+      <Pressable style={styles.formButtonContainer} onPress={onSubmit}>
+        <Text style={styles.formButton}>
+          Sign in
+        </Text>
+      </Pressable>
       </View>
     </View>
   );
@@ -60,7 +72,7 @@ const SignInForm = ({ onSubmit }) => {
 
 const SignIn = () => {
   const onSubmit = (values) => {
-    console.log(values);
+    //console.log(values);
     console.log("Submitted the form.");
   };
 
@@ -70,7 +82,7 @@ const SignIn = () => {
       onSubmit={onSubmit} 
       validationSchema={validationSchema}
     >
-      <SignInForm onSubmit={onSubmit} />
+      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
     </Formik>
   );
 };

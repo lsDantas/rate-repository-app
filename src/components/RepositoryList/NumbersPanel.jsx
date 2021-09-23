@@ -12,10 +12,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   itemNumber: {
+    fontFamily: theme.fontFamily,
     fontWeight: theme.fontWeights.bold,
     color: theme.colors.textPrimary,
   },
   itemLabel: {
+    fontFamily: theme.fontFamily,
     color: theme.colors.textSecondary,
   },
 });

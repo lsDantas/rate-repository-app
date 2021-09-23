@@ -6,12 +6,14 @@ import theme from '../../theme';
 const styles = StyleSheet.create({
   primaryText: {
     color: theme.colors.textPrimary,
+    fontFamily: theme.fontFamily,
     flex: 1,
     flexWrap: 'wrap',
     fontWeight: theme.fontWeights.bold,
   },
   secondaryText: {
     color: theme.colors.textSecondary,
+    fontFamily: theme.fontFamily,
     flex: 1,
     flexWrap: 'wrap',
   },
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
   },
   tagText: {
     backgroundColor: theme.colors.primary,
+    fontFamily: theme.fontFamily,
     borderRadius: theme.roundedComponents.borderRadius,
     padding: 4,
     color: theme.colors.textContrast,

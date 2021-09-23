@@ -9,7 +9,7 @@ import NumbersPanel from './NumbersPanel';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ffffff",
-    padding: 10
+    padding: 10,
   },
   card: {
     flexDirection: 'row',
