@@ -8,8 +8,8 @@ import AppBarTab from './AppBarTab';
 import theme from '../theme';
 
 // Padding Constants
-const horizontalPadding = 15;
-const topPadding = 10;
+const horizontalPadding = 10;
+const topPadding = 20;
 const bottomPadding = 20;
 
 const styles = StyleSheet.create({
