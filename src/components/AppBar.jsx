@@ -6,6 +6,8 @@ import Constants from 'expo-constants';
 import AppBarTab from './AppBarTab';
 
 import theme from '../theme';
+import useVerifyUser from '../hooks/useVerifyUser';
+import useSignOut from '../hooks/useSignOut';
 
 // Padding Constants
 const horizontalPadding = 10;
@@ -29,20 +31,25 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const loggedUser = useVerifyUser();
+  const signOut = useSignOut();
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal>
         <View style={styles.appScroll}>
-          <Pressable onPress={() => { }}>
-            <Link to="/">
-              <AppBarTab text='Repositories' />
-            </Link>
-          </Pressable>
-          <Pressable onPress={() => { }}>
-            <Link to="/sign-in">
-              <AppBarTab text='Sign in' />
-            </Link>
-          </Pressable>
+          <Link to="/">
+            <AppBarTab text='Repositories' />
+          </Link>
+          {
+            (loggedUser.data.authorizedUser)
+              ? <Pressable onPress={signOut}>
+                  <AppBarTab text='Sign out' />
+                </Pressable>
+              : <Link to="/sign-in">
+                  <AppBarTab text='Sign in' />
+                </Link>
+          }
         </View>
       </ScrollView>
     </View>
