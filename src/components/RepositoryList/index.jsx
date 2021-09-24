@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, View, SafeAreaView, StyleSheet } from 'react-native';
 
-import useRepositories from '../hooks/useRepositories';
+import useRepositories from '../../hooks/useRepositories';
 
 import RepositoryItem from './RepositoryItem';
 
