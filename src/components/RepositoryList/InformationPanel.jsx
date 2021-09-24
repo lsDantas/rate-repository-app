@@ -41,16 +41,16 @@ const InformationPanel = ({ fullName, description, language }) => {
   return (
     <View style={styles.generalContainer}>
       <View style={styles.itemContainer}>
-        <Text style={styles.primaryText}>
+        <Text testID='repository-full-name' style={styles.primaryText}>
           {fullName}
         </Text>
       </View>
-      <View style={styles.itemContainer}>
+      <View testID='repository-description' style={styles.itemContainer}>
         <Text style={styles.secondaryText}>
           {description}
         </Text>
       </View>
-      <View style={styles.itemContainer}>
+      <View testID='repository-language' style={styles.itemContainer}>
         <Text style={styles.tagText}>
           {language}
         </Text>

@@ -26,10 +26,11 @@ const NumbersPanel = ({ id, content }) => {
   return (
     <View style={styles.generalContainer}>
       {
-        content.map((entry, index) => <NumbersPanelItem 
+        content.map((entry, index) => <NumbersPanelItem
           key={`numbers-panel-${id}-${index}`}
           label={entry.label}
           number={entry.number}
+          testID={`numbers-panel-${entry.name}`}
         />)
       }
     </View>
@@ -44,10 +45,10 @@ const NumbersPanelItem = ({ number, label }) => {
 
   return (
     <View style={styles.itemContainer}>
-      <Text style={styles.itemNumber}>
+      <Text testID={`numbers-panel-number`} style={styles.itemNumber}>
         {numberFigure}
       </Text>
-      <Text style={styles.itemLabel}>
+      <Text testID={`numbers-panel-text`} style={styles.itemLabel}>
         {label}
       </Text>
     </View>

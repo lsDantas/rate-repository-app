@@ -23,10 +23,10 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ item }) => {
   const displayedNumbers = [
-    { label: 'Stars', number: item.stargazersCount },
-    { label: 'Forks', number: item.forksCount },
-    { label: 'Reviews', number: item.reviewCount },
-    { label: 'Rating', number: item.ratingAverage },
+    { name: 'stars', label: 'Stars', number: item.stargazersCount },
+    { name: 'forks', label: 'Forks', number: item.forksCount },
+    { name: 'reviews', label: 'Reviews', number: item.reviewCount },
+    { name: 'rating', label: 'Rating', number: item.ratingAverage },
   ];
 
   return (
