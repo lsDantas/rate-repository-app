@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import * as Linking from 'expo-linking';
+import { View, Image, StyleSheet, Pressable, Text } from 'react-native';
 
 import theme from '../../theme';
 
@@ -18,16 +19,42 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: theme.roundedComponents.borderRadius,
-  }
+  },
+  linkButtonContainer: {
+    backgroundColor: theme.colors.primary,
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  linkButton: {
+    color: theme.colors.textContrast,
+    fontSize: theme.fontSizes.subheading,
+    fontWeight: theme.fontWeights.bold,
+    fontFamily: theme.fontFamily,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
 
 const RepositoryItem = ({ item }) => {
+  // Loading
+  if (!item) {
+    return <></>;
+  }
+
   const displayedNumbers = [
     { name: 'stars', label: 'Stars', number: item.stargazersCount },
     { name: 'forks', label: 'Forks', number: item.forksCount },
     { name: 'reviews', label: 'Reviews', number: item.reviewCount },
     { name: 'rating', label: 'Rating', number: item.ratingAverage },
   ];
+
+  const onGitHubOpen = () => {
+    Linking.openURL(item.url);
+  };
 
   return (
     <View style={styles.container}>
@@ -40,6 +67,14 @@ const RepositoryItem = ({ item }) => {
         />
       </View>
       <NumbersPanel id={item.id} content={displayedNumbers} />
+      { (item.url)
+        ? <Pressable testID='open-github-button' style={styles.linkButtonContainer} onPress={onGitHubOpen}>
+          <Text style={styles.linkButton}>
+            Open in GitHub
+          </Text>
+        </Pressable>
+        : <></>
+      }
     </View>
   );
 };

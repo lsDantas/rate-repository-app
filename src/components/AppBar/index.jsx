@@ -42,7 +42,7 @@ const AppBar = () => {
             <AppBarTab text='Repositories' />
           </Link>
           {
-            (loggedUser.data.authorizedUser)
+            (loggedUser.data && loggedUser.data.authorizedUser)
               ? <Pressable onPress={signOut}>
                   <AppBarTab text='Sign out' />
                 </Pressable>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FlatList, View, SafeAreaView, StyleSheet } from 'react-native';
+import { useHistory } from 'react-router-native';
+import { FlatList, View, SafeAreaView, StyleSheet, Pressable } from 'react-native';
 
 import useRepositories from '../../hooks/useRepositories';
 
@@ -22,12 +23,21 @@ const styles = StyleSheet.create({
 const ItemSeparator = () => <View style={styles.separator} />;
 
 export const RepositoryListContainer = ({ repositories }) => {
+  const history = useHistory();
   const repositoryNodes = repositories
     ? repositories.edges.map((edge) => edge.node)
     : [];
 
   const renderItem = ({ item }) => {
-    return <RepositoryItem item={item} />;
+    const repositoryRedirect = () => {
+      history.push(`/repositories/${item.id}`);
+    };
+
+    return (
+      <Pressable onPress={repositoryRedirect}>
+        <RepositoryItem item={item} />
+      </Pressable>
+    );
   };
 
   return (

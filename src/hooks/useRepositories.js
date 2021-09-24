@@ -10,7 +10,8 @@ const useRepositories = () => {
   return { 
     repositories: data ? data.repositories : undefined, 
     error, 
-    loading };
+    loading 
+  };
 };
 
 export default useRepositories;
