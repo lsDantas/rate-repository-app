@@ -5,9 +5,9 @@ import Constants from 'expo-constants';
 
 import AppBarTab from './AppBarTab';
 
-import theme from '../theme';
-import useVerifyUser from '../hooks/useVerifyUser';
-import useSignOut from '../hooks/useSignOut';
+import theme from '../../theme';
+import useVerifyUser from '../../hooks/useVerifyUser';
+import useSignOut from '../../hooks/useSignOut';
 
 // Padding Constants
 const horizontalPadding = 10;
