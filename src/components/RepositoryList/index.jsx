@@ -81,7 +81,8 @@ export const RepositoryListContainer = ({
   selectedOrder,
   setSelectedOrder,
   searchQuery,
-  setSearchQuery }) => {
+  setSearchQuery, 
+  onEndReach }) => {
   
   const history = useHistory();
   const repositoryNodes = repositories
@@ -106,6 +107,8 @@ export const RepositoryListContainer = ({
         data={repositoryNodes}
         ItemSeparatorComponent={ItemSeparator}
         renderItem={renderItem}
+        onEndReached={onEndReach}
+        onEndReachedThreshold={0.5}
         style={{ flex: 1 }}
         testID='repository-list-container'
         ListHeaderComponent={<RepositoryFilter selectedOrder={selectedOrder} setSelectedOrder={setSelectedOrder}
@@ -122,11 +125,17 @@ const RepositoryList = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchKeyword] = useDebounce(searchQuery, 300);
 
-  const { repositories } = useRepositories(selectedOrder, searchKeyword);
-  
+  const numFirstEntries = 5;
+  const { repositories, fetchMore } = useRepositories(selectedOrder, searchKeyword, numFirstEntries);
+
+  const onEndReach = () => {
+    fetchMore();
+  };
+
   return (
     <RepositoryListContainer 
       repositories={repositories}
+      onEndReach={onEndReach}
       selectedOrder={selectedOrder} 
       setSelectedOrder={setSelectedOrder}
       searchQuery={searchQuery}
