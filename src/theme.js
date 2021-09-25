@@ -7,6 +7,7 @@ const theme = {
     textPrimary: '#000000',
     textSecondary: '#656565',
     textContrast: '#f0f0f0',
+    background: '#d5d5d5',
     alertRed: '#d73a4a',
   },
   fontFamily: Platform.select({ 

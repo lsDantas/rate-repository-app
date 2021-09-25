@@ -1,14 +1,15 @@
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../graphql/queries';
 
-const useRepositories = (ordering) => {
+const useRepositories = (ordering, searchKeyword) => {
   // Determine Ordering
   const orderBy = (ordering === 'latest') ? "CREATED_AT" : "RATING_AVERAGE";
   const orderDirection = (ordering === 'highest') ? "DESC" : "ASC";
 
   const input = { 
     orderBy,
-    orderDirection
+    orderDirection,
+    searchKeyword,
   };
 
   // Query Server
