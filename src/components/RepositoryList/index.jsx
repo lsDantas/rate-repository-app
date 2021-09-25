@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-native';
 import { FlatList, View, SafeAreaView, StyleSheet, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -80,9 +80,9 @@ export const RepositoryListContainer = ({ repositories, selectedOrder, setSelect
 };
 
 const RepositoryList = () => {
-  const [selectedOrder, setSelectedOrder] = useState();
-  const { repositories } = useRepositories();
-
+  const [selectedOrder, setSelectedOrder] = useState('latest');
+  const { repositories } = useRepositories(selectedOrder);
+  
   return <RepositoryListContainer repositories={repositories} selectedOrder={selectedOrder} setSelectedOrder={setSelectedOrder} />;
 };
 
