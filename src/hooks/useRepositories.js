@@ -6,7 +6,6 @@ const useRepositories = (selectedOrder, searchKeyword, numFirstEntries) => {
   const orderBy = (selectedOrder === 'latest') ? "CREATED_AT" : "RATING_AVERAGE";
   const orderDirection = (selectedOrder === 'highest') ? "DESC" : "ASC";
 
-  
   const variables = {
     orderBy,
     orderDirection,
@@ -22,6 +21,7 @@ const useRepositories = (selectedOrder, searchKeyword, numFirstEntries) => {
     }
   );
 
+  // Determine Fetch Procedure
   const handleFetchMore = () => {
     const canFetchMore = !loading && data?.repositories.pageInfo.hasNextPage;
 
