@@ -60,10 +60,25 @@ const validationSchema = yup.object().shape({
 const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.formContainer}>
-      <FormikTextInput testID='username-field' name='username' placeholder='Username' style={styles.formField} />
-      <FormikTextInput testID='password-field' name='password' placeholder='Password' style={styles.formField} secureTextEntry={true} />
+      <FormikTextInput 
+        testID='username-field'
+        name='username'
+        placeholder='Username'
+        style={styles.formField} 
+      />
+      <FormikTextInput 
+        testID='password-field'
+        name='password'
+        placeholder='Password'
+        style={styles.formField}
+        secureTextEntry={true}
+      />
       <View style={styles.formButton}>
-      <Pressable testID='submit-button' style={styles.formButtonContainer} onPress={onSubmit}>
+      <Pressable 
+        testID='submit-button'
+        style={styles.formButtonContainer}
+        onPress={onSubmit}
+      >
         <Text style={styles.formButton}>
           Sign in
         </Text>

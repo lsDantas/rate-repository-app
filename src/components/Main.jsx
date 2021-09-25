@@ -5,6 +5,7 @@ import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import SingleRepositoryView from './SingleRepositoryView';
 import SignIn from './SignIn';
+import NewReview from './NewReviewForm';
 
 const Main = () => {
   return (
@@ -16,6 +17,9 @@ const Main = () => {
         </Route>
         <Route path='/sign-in' exact>
           <SignIn />
+        </Route>
+        <Route path='/new-review' exact>
+          <NewReview />
         </Route>
         <Route path='/repositories/:id' exact>
           <SingleRepositoryView />

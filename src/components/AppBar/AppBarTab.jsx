@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: theme.colors.textContrast,
-    fontSize: theme.fontSizes.heading,
+    fontSize: theme.fontSizes.subheading,
     fontWeight: '700',
   }
 });

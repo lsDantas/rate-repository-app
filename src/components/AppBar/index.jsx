@@ -41,6 +41,9 @@ const AppBar = () => {
           <Link to="/">
             <AppBarTab text='Repositories' />
           </Link>
+          <Link to="/new-review">
+            <AppBarTab text='Create a Review' />
+          </Link>
           {
             (loggedUser.data && loggedUser.data.authorizedUser)
               ? <Pressable onPress={signOut}>

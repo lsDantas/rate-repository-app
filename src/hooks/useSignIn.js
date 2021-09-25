@@ -16,11 +16,14 @@ const useSignIn = () => {
       }
     };
 
-    const { data } = await mutate({ variables: input });
-    await authStorage.setAccessToken(data.authorize.accessToken);
-    apolloClient.resetStore();
+    const response = await mutate({ variables: input });
+    
+    if (response.data && response.data.authorize) {
+      await authStorage.setAccessToken(response.data.authorize.accessToken);
+      apolloClient.resetStore();
+    }
 
-    return await mutate({ variables: input });
+    return response;
   };
 
   return [signIn, result];
