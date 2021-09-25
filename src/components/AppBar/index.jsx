@@ -38,10 +38,10 @@ const AppBar = () => {
     <View style={styles.container}>
       <ScrollView horizontal>
         <View style={styles.appScroll}>
-          <Link to="/">
+          <Link to='/'>
             <AppBarTab text='Repositories' />
           </Link>
-          <Link to="/new-review">
+          <Link to='/new-review'>
             <AppBarTab text='Create a Review' />
           </Link>
           {
@@ -49,9 +49,14 @@ const AppBar = () => {
               ? <Pressable onPress={signOut}>
                   <AppBarTab text='Sign out' />
                 </Pressable>
-              : <Link to="/sign-in">
-                  <AppBarTab text='Sign in' />
-                </Link>
+              : <>
+                  <Link to='/sign-in'>
+                    <AppBarTab text='Sign in' />
+                  </Link>
+                  <Link to='/sign-up'>
+                    <AppBarTab text='Sign-up' />
+                  </Link>
+                </>
           }
         </View>
       </ScrollView>

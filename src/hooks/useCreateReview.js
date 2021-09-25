@@ -16,7 +16,6 @@ const useCreateReview = () => {
         text: textDescription
       } 
     };
-    console.log('Input: ', input);
 
     const response = await mutate({ variables: input });
 
