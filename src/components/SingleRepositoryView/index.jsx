@@ -84,7 +84,6 @@ const RepositoryInfo = ({ repository }) => {
 };
 
 const ReviewItem = ({ review }) => {
-  console.log(review);
   const formattedDate = format(
     parseISO(review.createdAt), 
     'MM.dd.yyyy'
@@ -123,8 +122,8 @@ const SingleRepositoryView = () => {
     <FlatList
       data={repository.reviews.edges}
       ItemSeparatorComponent={ItemSeparator}
-      renderItem={({ item }) => <ReviewItem review={item.node} id={item.node.id} />}
-      keyExtractor={({ id }) => id}
+      renderItem={({ item }) => <ReviewItem review={item.node} />}
+      keyExtractor={(item) => item.node.id}
       ListHeaderComponent={() => <RepositoryInfo repository={repository} />}
     />
   );
