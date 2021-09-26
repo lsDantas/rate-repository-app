@@ -142,8 +142,9 @@ const MyReviewView = ({ review, history, deleteReview, refetch }) => {
         {
           text: 'Delete',
           onPress: () => {
-            deleteReview(review.id);
-            refetch();
+            deleteReview(review.id).then(
+              () => refetch()
+            );
           }
         },
       ]
