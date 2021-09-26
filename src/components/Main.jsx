@@ -4,10 +4,10 @@ import { Route, Switch, Redirect } from 'react-router-native';
 import AppBar from './AppBar';
 import RepositoryList from './RepositoryList';
 import SingleRepositoryView from './SingleRepositoryView';
-import NewReview from './NewReviewForm';
+import NewReview from './forms/NewReviewForm';
 import MyReviewsView from './MyReviewsView';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import SignIn from './forms/SignIn';
+import SignUp from './forms/SignUp';
 
 const Main = () => {
   return (

@@ -6,7 +6,7 @@ import { FlatList, View, SafeAreaView, StyleSheet, Pressable } from 'react-nativ
 import { Picker } from '@react-native-picker/picker';
 import { Searchbar } from 'react-native-paper';
 
-import useRepositories from '../../hooks/useRepositories';
+import useRepositories from '../../hooks/repositories/useRepositories';
 
 import RepositoryItem from './RepositoryItem';
 

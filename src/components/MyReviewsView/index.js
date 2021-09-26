@@ -3,7 +3,7 @@ import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import ReviewItem from '../SingleRepositoryView/ReviewItem';
 
-import useVerifyUser from '../../hooks/useVerifyUser';
+import useVerifyUser from '../../hooks/authentication/useVerifyUser';
 
 const styles = StyleSheet.create({
   separator: {

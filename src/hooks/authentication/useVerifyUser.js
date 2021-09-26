@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import { VERIFY_USER } from '../graphql/queries';
+import { VERIFY_USER } from '../../graphql/queries';
 
 const useVerifyUser = (includeReviews = false, numFirstEntries = 5) => {
   // Prepare Variables

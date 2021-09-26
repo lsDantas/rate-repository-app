@@ -5,11 +5,11 @@ import { View, Pressable, Text, StyleSheet } from 'react-native';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import FormikTextInput from './FormikTextInput';
+import FormikTextInput from '../FormikTextInput';
 
-import theme from '../../theme';
+import theme from '../../../theme';
 
-import useSignIn from '../../hooks/useSignIn';
+import useSignIn from '../../../hooks/authentication/useSignIn';
 
 const initialValues = {
   username: '',

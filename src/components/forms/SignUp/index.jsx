@@ -5,10 +5,10 @@ import { View, Pressable, Text, StyleSheet } from 'react-native';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
-import FormikTextInput from './SignIn/FormikTextInput';
+import FormikTextInput from '../FormikTextInput';
 
-import theme from '../theme';
-import useSignUp from '../hooks/useSignUp';
+import theme from '../../../theme';
+import useSignUp from '../../../hooks/authentication/useSignUp';
 
 const fieldMarginSize = 4;
 
