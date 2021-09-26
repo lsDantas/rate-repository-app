@@ -46,9 +46,14 @@ const AppBar = () => {
           </Link>
           {
             (loggedUser.data && loggedUser.data.authorizedUser)
-              ? <Pressable onPress={signOut}>
+              ? <>
+                <Link to='/my-reviews'>
+                  <AppBarTab text='My Reviews' />
+                </Link>
+                <Pressable onPress={signOut}>
                   <AppBarTab text='Sign out' />
                 </Pressable>
+                </>
               : <>
                   <Link to='/sign-in'>
                     <AppBarTab text='Sign in' />

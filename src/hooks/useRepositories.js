@@ -21,7 +21,7 @@ const useRepositories = (selectedOrder, searchKeyword, numFirstEntries) => {
     }
   );
 
-  // Determine Fetch Procedure
+  // Establish Fetch Procedure
   const handleFetchMore = () => {
     const canFetchMore = !loading && data?.repositories.pageInfo.hasNextPage;
 

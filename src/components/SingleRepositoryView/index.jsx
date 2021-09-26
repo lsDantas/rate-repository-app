@@ -3,10 +3,10 @@ import { useParams } from 'react-router-native';
 
 import { FlatList, StyleSheet, View } from 'react-native';
 
-import useRepository from '../../hooks/useRepository';
-
 import RepositoryItem from '../RepositoryList/RepositoryItem';
 import ReviewItem from './ReviewItem';
+
+import useRepository from '../../hooks/useRepository';
 
 const styles = StyleSheet.create({
   container: {

@@ -56,10 +56,30 @@ export const GET_REPOSITORY = gql`
 `;
 
 export const VERIFY_USER = gql`
-  query VerifyUser {
+  query VerifyUser($first: Int, $after: String, $includeReviews: Boolean = false) {
     authorizedUser {
       id
       username
+      reviews(first: $first, after: $after) @include(if: $includeReviews) {
+        edges {
+          node {
+            id
+            text
+            rating
+            createdAt
+            user {
+              id
+              username
+            }
+          }
+          cursor
+        }
+        pageInfo {
+          hasNextPage
+          startCursor
+          endCursor
+        }
+      }
     }
   }
 `;

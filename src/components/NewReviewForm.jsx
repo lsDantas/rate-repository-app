@@ -106,7 +106,6 @@ const NewReviewForm = ({ onSubmit }) => {
           </Text>
         </Pressable>
       </View>
-
     </View>
   );
 };

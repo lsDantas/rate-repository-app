@@ -17,7 +17,7 @@ const useRepository = (id, numFirstEntries) => {
     }
   );
   
-  // Determine Fetch Procedure
+  // Establish Fetch Procedure
   const handleFetchMore = () => {
     const canFetchMore = !loading && data?.repository.reviews.pageInfo.hasNextPage;
 
