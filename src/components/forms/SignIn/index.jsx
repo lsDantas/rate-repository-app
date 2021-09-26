@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.2,
     padding: 5,
     margin: fieldMarginSize,
-    borderRadius: 2,
+    borderRadius: theme.roundedComponents.buttonsBorderRadius,
   },
   formButtonContainer: {
     alignItems: 'center',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     fontFamily: theme.fontFamily,
     padding: 5,
     margin: fieldMarginSize,
-    borderRadius: 2,
+    borderRadius: theme.roundedComponents.buttonsBorderRadius,
   },
 });
 

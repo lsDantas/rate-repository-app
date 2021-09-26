@@ -67,6 +67,10 @@ export const VERIFY_USER = gql`
             text
             rating
             createdAt
+            repository {
+              id
+              fullName
+            }
             user {
               id
               username

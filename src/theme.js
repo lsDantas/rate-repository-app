@@ -24,7 +24,8 @@ const theme = {
     bold: '700',
   },
   roundedComponents: {
-    borderRadius: 5
+    borderRadius: 5,
+    buttonsBorderRadius: 4,
   },
 };
 
