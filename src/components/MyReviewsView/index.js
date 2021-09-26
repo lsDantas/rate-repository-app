@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FlatList, StyleSheet, View, Text } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import ReviewItem from '../SingleRepositoryView/ReviewItem';
 
 import useVerifyUser from '../../hooks/useVerifyUser';
